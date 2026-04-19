@@ -1,0 +1,1 @@
+UPDATE t_p25510910_new_moms_support.users SET role = 'admin' WHERE email = 'valeriya055@mail.ru';
