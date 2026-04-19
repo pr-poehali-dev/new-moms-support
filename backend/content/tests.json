@@ -1,0 +1,29 @@
+{
+  "tests": [
+    {
+      "name": "GET specialists — публичный список",
+      "method": "GET",
+      "path": "/?action=specialists",
+      "expectedStatus": 200,
+      "expectedBody": [],
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "GET meetings — публичный список",
+      "method": "GET",
+      "path": "/?action=meetings",
+      "expectedStatus": 200,
+      "expectedBody": [],
+      "bodyMatcher": "partial"
+    },
+    {
+      "name": "POST specialist без прав — 403",
+      "method": "POST",
+      "path": "/?action=specialist",
+      "body": {"name": "Тест", "role": "Тест", "tags": [], "img": ""},
+      "expectedStatus": 403,
+      "expectedBody": {"error": "Нет прав"},
+      "bodyMatcher": "partial"
+    }
+  ]
+}
