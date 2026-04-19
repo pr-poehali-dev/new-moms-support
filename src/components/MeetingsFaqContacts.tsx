@@ -56,11 +56,6 @@ const MEETINGS = [
 
 export default function MeetingsFaqContacts() {
   const [openFaq, setOpenFaq] = useState<number | null>(null);
-  const [meetings, setMeetings] = useState<Meeting[]>([]);
-
-  useEffect(() => {
-    getMeetings().then(setMeetings);
-  }, []);
 
   return (
     <>
@@ -75,9 +70,9 @@ export default function MeetingsFaqContacts() {
         </div>
 
         <div className="space-y-4 max-w-2xl mx-auto">
-          {meetings.map((m) => (
+          {MEETINGS.map((m) => (
             <div
-              key={m.id}
+              key={m.title}
               className="flex items-center gap-5 bg-white border border-border rounded-2xl p-5 hover:shadow-md transition-shadow"
             >
               <div className="text-center min-w-[52px]">
